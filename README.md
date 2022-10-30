@@ -12,5 +12,3 @@
 
 ## to research list
 - 지역 정보에 대한 라이브러리
-
-# test
