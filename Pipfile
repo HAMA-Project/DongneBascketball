@@ -8,6 +8,12 @@ django = "*"
 django-ninja = "*"
 
 [dev-packages]
+flake8 = "*"
+isort = "*"
+mypy = "==0.971"
+pre-commit = "*"
+autoflake = "*"
+
 
 [requires]
 python_version = "3.10"
