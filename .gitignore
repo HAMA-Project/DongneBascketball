@@ -1,4 +1,10 @@
+# Local DB
 db.sqlite3
+
+# Byte-compiled / optimized / DLL files
+*/__pycache__/
+*/*/__pycache__/
+
 # Environments
 .env
 .venv
@@ -7,3 +13,19 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Unit test / coverage reports
+junit/
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/

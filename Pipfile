@@ -8,11 +8,16 @@ django = "*"
 django-ninja = "*"
 
 [dev-packages]
+factory-boy = "*"
 flake8 = "*"
 isort = "*"
 mypy = "==0.971"
 pre-commit = "*"
 autoflake = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-django = "*"
+pytest-env = "*"
 
 [requires]
 python_version = "3.10"
