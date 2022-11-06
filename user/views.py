@@ -7,6 +7,6 @@ from user.schemas import UserIn
 api = NinjaAPI()
 
 
-@api.post(path="", response={201: MessageOut, 200: MessageOut})
+@api.post(path="signup", response={201: MessageOut, 200: MessageOut})
 def create_user(request, payload: UserIn):
     return User.objects.create_user(**payload.dict())

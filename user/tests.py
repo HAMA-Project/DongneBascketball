@@ -14,7 +14,7 @@ class BackofficeLoginTest(TestCase):
 
         # When
         reponse = self.client.post(
-            path="/users/",
+            path="/users/signup",
             data=json.loads(payload.json()),
             content_type="application/json",
         )
