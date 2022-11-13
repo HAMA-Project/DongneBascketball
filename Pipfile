@@ -6,9 +6,10 @@ name = "pypi"
 [packages]
 django = "*"
 django-ninja = "*"
+factory-boy = "*"
 
 [dev-packages]
-factory-boy = "*"
+black = "*"
 flake8 = "*"
 isort = "*"
 mypy = "==0.971"

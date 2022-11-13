@@ -1,20 +1,16 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
-from django.db.utils import IntegrityError
 
 
 class UserManager(BaseUserManager):
     def create_user(self, email, username, password):
-        try:
-            user = self.model(
-                email=email,
-                username=username,
-            )
-            user.set_password(password)
-            user.save(using=self._db)
-            return 200, {"message": "success"}
-        except IntegrityError:
-            return 400, {"message": "Already Exist Email"}
+        user = self.model(
+            email=email,
+            username=username,
+        )
+        user.set_password(password)
+        user.save(using=self._db)
+        return 200, {"message": "success"}
 
     def create_superuser(self, email, password):
         user = self.create_user(email=email, password=password)
