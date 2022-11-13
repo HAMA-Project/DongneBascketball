@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 const materialModules = [
@@ -14,6 +15,7 @@ const materialModules = [
   MatIconModule,
   MatToolbarModule,
   MatSidenavModule,
+  MatDialogModule,
 ];
 
 

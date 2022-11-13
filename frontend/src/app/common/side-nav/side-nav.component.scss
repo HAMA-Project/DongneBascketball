@@ -1,0 +1,27 @@
+.sidenav-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border-right: 2px solid transparent;
+  height: 3rem;
+  border-bottom: 1px solid var(--line-color);
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(to right, transparent, 80%, var(--sidenav-item-hover-color));
+  }
+  &:active {
+    border-right-color: var(--sidenav-item-active-color);
+    font-weight: 600;
+  }
+  &-active {
+    border-right-color: var(--sidenav-item-active-color);
+    font-weight: 600;
+      &:hover {
+        background: linear-gradient(to right, transparent, 90%, var(--sidenav-item-hover-color));
+        font-weight: 600;
+      }
+  }
+}

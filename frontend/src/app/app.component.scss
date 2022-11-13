@@ -4,10 +4,17 @@
   .header {
     padding: 0 10%;
     border-bottom: 1px solid var(--line-color);
+    height: var(--gnb-height);
   }
 
   mat-drawer-container {
     margin: 0 10%;
-    height: calc(100% - var(--gnb-height));
+    height: calc(100% - (var(--gnb-height) + 1px));
+
+    mat-drawer-content {
+      padding: 1rem;
+      background: transparent;
+    }
   }
+  
 }
