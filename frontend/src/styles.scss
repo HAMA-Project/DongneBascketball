@@ -2,3 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+:root {
+  --gnb-height: 64px;
+  --line-color: rgba(0, 0, 0, 0.12);
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: var(--gnb-height);
+}
