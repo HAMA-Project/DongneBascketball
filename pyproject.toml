@@ -1,0 +1,40 @@
+[tool.black]
+line-length = 120
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+# A regex preceded with ^/ will apply only to files and directories
+# in the root of the project.
+^/foo.py  # exclude a file named foo.py in the root of the project (in addition to the defaults)
+'''
+
+[tool.mypy]
+python_version = '3.9'
+ignore_missing_imports = 'True'
+exclude = [
+    "migrations"
+]
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "core.settings"
+
+[tool.isort]
+profile = "black"
+skip = [".venv", "node_modules", "Caches"]
+line_length = 120
+known_third_party = ["PIL", "websocket"]
+sections= ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+
+# https://docs.pytest.org/en/6.2.x/reference.html
+[tool.pytest.ini_options]
+minversion = "6.2"
+env_files = [
+    ".env",
+    ".test.env",
+    ".deploy.env",
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -9,6 +9,7 @@ django-ninja = "*"
 factory-boy = "*"
 
 [dev-packages]
+black = "*"
 flake8 = "*"
 isort = "*"
 mypy = "==0.971"
