@@ -7,8 +7,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 :root {
   --gnb-height: 64px;
   --line-color: rgba(0, 0, 0, 0.12);
+  --main-color: #D2691E;
+  --sub-color: rgba(255, 165, 0, 0.4);
+  --sidenav-item-hover-color: rgba(255, 165, 0, 0.4);
+  --sidenav-item-active-color: #D2691E;
 }
 
 .mat-toolbar-row, .mat-toolbar-single-row {
   height: var(--gnb-height);
+}
+
+.mat-drawer-container {
+  background: transparent;
 }
