@@ -5,8 +5,6 @@ from django.db.utils import IntegrityError
 
 class UserManager(BaseUserManager):
     def create_user(self, email, username, password):
-        if not email:
-            return 200, {"message": "Users must have an email"}
         try:
             user = self.model(
                 email=email,
@@ -14,9 +12,9 @@ class UserManager(BaseUserManager):
             )
             user.set_password(password)
             user.save(using=self._db)
-            return 201, {"message": "success"}
+            return 200, {"message": "success"}
         except IntegrityError:
-            return 200, {"message": "Already Exist Email"}
+            return 400, {"message": "Already Exist Email"}
 
     def create_superuser(self, email, password):
         user = self.create_user(email=email, password=password)
