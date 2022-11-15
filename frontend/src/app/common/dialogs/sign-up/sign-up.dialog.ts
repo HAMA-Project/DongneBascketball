@@ -7,7 +7,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
     styleUrls: ['../global-dialog.scss', './sign-up.dialog.scss'],
 })
 export class SignUpDialog {
-  
+
   constructor(
     public dialogRef: MatDialogRef<SignUpDialog>,
     @Inject(MAT_DIALOG_DATA) data?: any

@@ -7,6 +7,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 :root {
   --gnb-height: 64px;
   --line-color: rgba(0, 0, 0, 0.12);
+  --opacity-12: rgba(0, 0, 0, 0.12);
+  --opacity-2: rgba(0, 0, 0, 0.2);
   --main-color: #D2691E;
   --sub-color: rgba(255, 165, 0, 0.4);
   --sidenav-item-hover-color: rgba(255, 165, 0, 0.4);
@@ -19,4 +21,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-drawer-container {
   background: transparent;
+}
+
+// mat-button primary color custom
+.mat-flat-button.mat-primary, 
+.mat-raised-button.mat-primary, 
+.mat-fab.mat-primary, 
+.mat-mini-fab.mat-primary {
+  background-color: var(--main-color);
+}
+
+// mat-form-field outline color custom
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: var(--main-color);
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: var(--main-color)
 }

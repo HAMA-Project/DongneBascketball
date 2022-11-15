@@ -18,13 +18,13 @@ export class GlobalNavBarComponent implements OnInit {
   }
 
   openSignInDialog() {
-    this.dialog.open(SignInDialog, { width: '40vw', disableClose: true }).afterClosed().subscribe(result => {
+    this.dialog.open(SignInDialog, { width: '25vw', disableClose: true }).afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
   openSignUpDialog() {
-    this.dialog.open(SignUpDialog, { width: '40vw', disableClose: true }).afterClosed().subscribe(result => {
+    this.dialog.open(SignUpDialog, { width: '25vw', disableClose: true }).afterClosed().subscribe(result => {
       console.log(result);
     });
   }

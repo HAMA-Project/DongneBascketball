@@ -4,11 +4,35 @@
     <mat-icon>close</mat-icon>
   </button>
 </div>
-<mat-dialog-content class="mat-typography">
-  <h3>Develop across all platforms</h3>
-  <p>Learn one way to build applications with Angular and reuse your code and abilities to build
-    apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
+<mat-dialog-content >
+  <form>
+    <mat-form-field appearance="outline">
+      <mat-label>이메일</mat-label>
+      <input type="email" matInput placeholder="이메일을 입력해주세요.">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>이름</mat-label>
+      <input type="email" matInput placeholder="이름을 입력해주세요.">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>비밀번호</mat-label>
+      <input matInput placeholder="비밀번호를 입력해주세요.">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>비밀번호 확인</mat-label>
+      <input matInput placeholder="비밀번호를 한번 더 입력해주세요.">
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="signUp()"
+    >
+        회원가입
+    </button>
+  </form>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-raised-button color="primary" (click)="signUp()">Sign Up</button>
-</mat-dialog-actions>
