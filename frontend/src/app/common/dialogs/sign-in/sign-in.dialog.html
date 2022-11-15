@@ -4,11 +4,40 @@
     <mat-icon>close</mat-icon>
   </button>
 </div>
-<mat-dialog-content class="mat-typography">
-  <h3>Develop across all platforms</h3>
-  <p>Learn one way to build applications with Angular and reuse your code and abilities to build
-    apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
+
+<mat-dialog-content>
+  <form>
+    <mat-form-field appearance="outline">
+      <mat-label>이메일</mat-label>
+      <input type="email" matInput placeholder="이메일을 입력해주세요.">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>비밀번호</mat-label>
+      <input matInput placeholder="비밀번호를 입력해주세요.">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      로그인
+    </button>
+  </form>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-raised-button color="primary">Login</button>
+
+<mat-dialog-actions>
+  <div class="line-box">
+    <mat-divider></mat-divider>
+    <span>또는</span>
+    <mat-divider></mat-divider>
+  </div>
+  <div class="logo-icons-box">
+    <button mat-icon-button (click)="openUrlLink('https://www.naver.com')">
+      <mat-icon svgIcon="naver"></mat-icon>
+    </button>
+    <button mat-icon-button (click)="openUrlLink('https://www.google.com')">
+      <mat-icon svgIcon="google"></mat-icon>
+    </button>
+    <button mat-icon-button (click)="openUrlLink('https://www.kakaocorp.com')">
+      <mat-icon svgIcon="kakao"></mat-icon>
+    </button>
+  </div>
 </mat-dialog-actions>

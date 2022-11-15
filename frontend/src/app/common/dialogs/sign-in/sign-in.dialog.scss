@@ -1,5 +1,59 @@
-.mat-dialog-actions {
-  button {
+.mat-dialog-content {
+  padding-bottom: 1rem;
+  form {
     width: 100%;
   }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    height: 3rem;
+  }
+}
+
+.mat-dialog-actions {
+  flex-direction: column;
+  
+  .line-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    align-items: center;
+
+    .mat-divider {
+      width: 100%;
+    }
+    
+    span {
+      white-space: nowrap;
+      color: var(--opacity-2);
+    }
+  }
+
+  .logo-icons-box {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    justify-content: center;
+    align-items: center;
+
+    .mat-icon-button {
+      width: 3rem;
+      height: 3rem;
+      line-height: 3rem;
+      .mat-icon {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+    
+  }
+  
 }

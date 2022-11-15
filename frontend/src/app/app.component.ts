@@ -16,5 +16,11 @@ export class AppComponent {
   ) {
     this.matIconRegistry.addSvgIcon('basketball',
             this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/basketball.svg'));
+    this.matIconRegistry.addSvgIcon('naver',
+            this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/naver_logo.svg'));
+    this.matIconRegistry.addSvgIcon('google',
+            this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/google_logo.svg'));
+    this.matIconRegistry.addSvgIcon('kakao',
+            this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/kakao_logo.svg'));
   }
 }
