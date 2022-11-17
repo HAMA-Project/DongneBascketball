@@ -1,1 +1,85 @@
-<p>home works!</p>
+<div class="page">
+  <div fxLayout="row" fxFlex fxLayoutGap="2vw">
+    <div fxLayout="column" fxFlex="49" fxLayoutGap="2vh">
+      <h1>게스트 공고</h1>
+      <table mat-table [dataSource]="guestPostDataSource">
+
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef>제목</th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="region">
+          <th mat-header-cell *matHeaderCellDef>지역</th>
+          <td mat-cell *matCellDef="let element"> {{element.region}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="match_date">
+          <th mat-header-cell *matHeaderCellDef>경기 날짜</th>
+          <td mat-cell *matCellDef="let element"> {{element.match_date}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>상태</th>
+          <td mat-cell *matCellDef="let element"> {{element.status ? "모집중" : "마감완료"}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="writer">
+          <th mat-header-cell *matHeaderCellDef>작성자</th>
+          <td mat-cell *matCellDef="let element"> {{element.writer}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="guestPostDisplayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: guestPostDisplayedColumns;"></tr>
+      </table>
+    </div>
+    <div fxLayout="column" fxFlex="49" fxLayoutGap="2vh">
+      <div fxLayout="column" fxLayoutGap="2vh">
+        <h1>자유게시판</h1>
+        <table mat-table [dataSource]="freeBoardPostDataSource">
+
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>제목</th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="created_date">
+            <th mat-header-cell *matHeaderCellDef>생성 시간</th>
+            <td mat-cell *matCellDef="let element"> {{element.created_date}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="writer">
+            <th mat-header-cell *matHeaderCellDef>작성자</th>
+            <td mat-cell *matCellDef="let element"> {{element.writer}} </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="freeBoardPostDisplayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: freeBoardPostDisplayedColumns;"></tr>
+        </table>
+      </div>
+      <div fxLayout="column" fxLayoutGap="2vh">
+        <h1>Q & A</h1>
+        <table mat-table [dataSource]="questionAnswerPostDataSource">
+
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>제목</th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="created_date">
+            <th mat-header-cell *matHeaderCellDef>생성 시간</th>
+            <td mat-cell *matCellDef="let element"> {{element.created_date}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="writer">
+            <th mat-header-cell *matHeaderCellDef>작성자</th>
+            <td mat-cell *matCellDef="let element"> {{element.writer}} </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="questionAnswerPostDisplayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: questionAnswerPostDisplayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
