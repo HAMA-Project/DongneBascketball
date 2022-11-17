@@ -11,7 +11,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --opacity-2: rgba(0, 0, 0, 0.2);
   --main-color: #D2691E;
   --sub-color: rgba(255, 165, 0, 0.4);
-  --sidenav-item-hover-color: rgba(255, 165, 0, 0.4);
+  --sidenav-item-hover-color: rgba(0, 0, 0, 0.1);
+  //--sidenav-item-hover-color: rgba(255, 165, 0, 0.4);
   --sidenav-item-active-color: #D2691E;
 }
 

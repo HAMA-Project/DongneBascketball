@@ -10,17 +10,20 @@
   cursor: pointer;
 
   &:hover {
-    background: linear-gradient(to right, transparent, 80%, var(--sidenav-item-hover-color));
+    background-color: var(--sidenav-item-hover-color);
   }
-  &:active {
-    border-right-color: var(--sidenav-item-active-color);
-    font-weight: 600;
-  }
+  // &:active {
+  //   background-color: var(--sidenav-item-active-color);
+  //   color: white;
+  //   font-weight: 600;
+  // }
   &-active {
-    border-right-color: var(--sidenav-item-active-color);
+    background-color: var(--sidenav-item-active-color);
+    color: white;
     font-weight: 600;
       &:hover {
-        background: linear-gradient(to right, transparent, 90%, var(--sidenav-item-hover-color));
+        background-color: var(--sidenav-item-active-color);
+        color: white;
         font-weight: 600;
       }
   }
