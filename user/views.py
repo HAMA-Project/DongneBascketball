@@ -1,4 +1,7 @@
+from random import randrange
+
 from django.contrib.auth import authenticate, login
+from django.core.mail import EmailMessage
 from ninja import NinjaAPI
 
 from core.schemas import MessageOut
@@ -15,6 +18,14 @@ def check_email(request, payload: EmailIn):
         return {"duplicate": True}
     except User.DoesNotExist:
         return {"duplicate": False}
+
+
+@api.post(path="/authenticates/email", response=MessageOut)
+def auth_email(request, payload: EmailIn):
+    auth_code = "".join([str(randrange(10)) for _ in range(4)])
+    email = EmailMessage("동네농구 가입 인증 코드", f"회원 가입을 진심으로 감사드립니다. 인증번호는 {auth_code}입니다.", to=[payload.email])
+    email.send()
+    return {"message": auth_code}
 
 
 @api.post(path="/duplicates/username", response=DuplicateOut)

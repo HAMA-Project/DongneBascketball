@@ -20,11 +20,12 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-    username = models.CharField("이름", max_length=20)
+    username = models.CharField("이름", max_length=20, unique=True)
     email = models.EmailField("이메일 주소", max_length=100, unique=True)
     password = models.CharField("비밀번호", max_length=128)
     join_date = models.DateTimeField("가입일", auto_now_add=True)
     is_active = models.BooleanField(default=True)
+    is_delete = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
 
     USERNAME_FIELD = "email"
