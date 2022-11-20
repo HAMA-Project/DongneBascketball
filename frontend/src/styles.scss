@@ -48,3 +48,12 @@ table {
 .mat-form-field.mat-focused .mat-form-field-label {
   color: var(--main-color)
 }
+
+// mat-form-field fill custom
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: var(--main-color);
+}

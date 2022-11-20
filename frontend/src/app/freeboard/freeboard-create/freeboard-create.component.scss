@@ -2,5 +2,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2vh;
+  gap: 1vh;
+}
+
+textarea {
+  height: 60vh;
+
+  &.mat-input-element {
+    resize: none;
+  }
 }
