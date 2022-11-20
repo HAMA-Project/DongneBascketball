@@ -13,6 +13,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.aws
+AWSCLIV2.pkg
+dongnebascketball-dev-1671353868.zip
 
 # Unit test / coverage reports
 junit/

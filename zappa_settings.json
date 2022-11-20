@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "aws_region": "ap-northeast-2",
+        "django_settings": "core.settings",
+        "profile_name": "HAMA",
+        "project_name": "dongnebascketball",
+        "runtime": "python3.9",
+        "s3_bucket": "zappa-akevrrhfd"
+    }
+}
