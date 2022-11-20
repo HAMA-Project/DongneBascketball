@@ -52,3 +52,17 @@ class BackofficeLoginTest(TestCase):
         # Then
         self.assertEqual(reponse.status_code, 200)
         self.assertEqual(reponse.json()["duplicate"], True)
+
+    def test_auth_email(self):
+        # Given
+        payload = EmailIn(email="a01046641857@gmail.com")
+
+        # When
+        response = self.client.post(
+            path="/users/authenticates/email",
+            data=json.loads(payload.json()),
+            content_type="application/json",
+        )
+
+        # Then
+        self.assertEqual(response.status_code, 200)
