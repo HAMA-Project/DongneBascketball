@@ -16,6 +16,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --sidenav-item-active-color: #D2691E;
 }
 
+// basic element
+
+table {
+  border: 1px solid var(--line-color);
+}
+
+// material custom
+
 .mat-toolbar-row, .mat-toolbar-single-row {
   height: var(--gnb-height);
 }

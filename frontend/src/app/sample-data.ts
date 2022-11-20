@@ -16,17 +16,25 @@ export const guestPostSampleData: GuestPost[] = [
 ];
 
 export const freeBoardPostSampleData: FreeBoardPost[] = [
-  { id: 1, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", writer: "마한범"},
-  { id: 2, title: "자유게시판 제목_2", content: "content sample", created_date: "2022/11/17/18:00", writer: "마한범"},
-  { id: 3, title: "자유게시판 제목_3", content: "content sample", created_date: "2022/11/17/18:00", writer: "마한범"},
-  { id: 4, title: "자유게시판 제목_4", content: "content sample", created_date: "2022/11/17/18:00", writer: "마한범"},
-  { id: 5, title: "자유게시판 제목_5", content: "content sample", created_date: "2022/11/17/18:00", writer: "마한범"}
+  { id: 1, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "마한범"},
+  { id: 2, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "하용운"},
+  { id: 3, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "마한범"},
+  { id: 4, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "하용운"},
+  { id: 5, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "김승부"},
+  { id: 6, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "이건호"},
+  { id: 7, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "하용운"},
+  { id: 8, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "마한범"},
+  { id: 9, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "마한범"},
+  { id: 10, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "하용운"},
+  { id: 11, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "하용운"},
+  { id: 12, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "하용운"},
+  { id: 13, title: "자유게시판 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "마한범"},
 ];
 
 export const questionAnswerPostSampleData: QuestionAnswerPost[] = [
-  { id: 1, title: "Q & A 제목_1", content: "content sample", created_date: "2022/11/17/18:00", writer: "마한범"},
-  { id: 2, title: "Q & A 제목_2", content: "content sample", created_date: "2022/11/17/18:00", writer: "마한범"},
-  { id: 3, title: "Q & A 제목_3", content: "content sample", created_date: "2022/11/17/18:00", writer: "마한범"},
-  { id: 4, title: "Q & A 제목_4", content: "content sample", created_date: "2022/11/17/18:00", writer: "마한범"},
-  { id: 5, title: "Q & A 제목_5", content: "content sample", created_date: "2022/11/17/18:00", writer: "마한범"}
+  { id: 1, title: "Q & A 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "마한범"},
+  { id: 2, title: "Q & A 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "마한범"},
+  { id: 3, title: "Q & A 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "마한범"},
+  { id: 4, title: "Q & A 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "마한범"},
+  { id: 5, title: "Q & A 제목_1", content: "content sample", created_date: "2022/11/17/18:00", updated_date: "2022/11/17/18:00", writer: "마한범"}  
 ];
