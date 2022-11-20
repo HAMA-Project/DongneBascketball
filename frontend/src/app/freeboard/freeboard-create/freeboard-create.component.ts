@@ -20,4 +20,9 @@ export class FreeboardCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  createFreeboardPost() {
+    const result = this.freeboardForm.getRawValue();
+    console.log(result);
+  }
+
 }
