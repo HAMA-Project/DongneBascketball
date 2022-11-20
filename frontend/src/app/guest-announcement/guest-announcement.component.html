@@ -1,0 +1,23 @@
+<div class="page">
+  <h1>게스트 공고</h1>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="1vw">
+    <mat-form-field appearance="outline">
+      <mat-label>Regions</mat-label>
+      <mat-select multiple (selectionChange)="onFilterRegions($event)">
+        <mat-option *ngFor="let region of regionList" [value]="region">{{region}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date">
+        <input matEndDate placeholder="End date">
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field> -->
+
+  </div>
+</div>

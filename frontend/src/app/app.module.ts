@@ -14,6 +14,8 @@ import { FreeboardComponent } from './freeboard/freeboard.component';
 import { QuestionAnswerComponent } from './question-answer/question-answer.component';
 import { SignInDialog } from './common/dialogs/sign-in/sign-in.dialog';
 import { SignUpDialog } from './common/dialogs/sign-up/sign-up.dialog';
+import { FreeboardDetailComponent } from './freeboard/freeboard-detail/freeboard-detail.component';
+import { FreeboardCreateComponent } from './freeboard/freeboard-create/freeboard-create.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SignUpDialog } from './common/dialogs/sign-up/sign-up.dialog';
     FreeboardComponent,
     QuestionAnswerComponent,
     SignInDialog,
-    SignUpDialog
+    SignUpDialog,
+    FreeboardDetailComponent,
+    FreeboardCreateComponent
   ],
   imports: [
     BrowserModule,
