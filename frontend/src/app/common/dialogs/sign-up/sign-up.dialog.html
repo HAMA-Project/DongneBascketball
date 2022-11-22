@@ -4,26 +4,90 @@
     <mat-icon>close</mat-icon>
   </button>
 </div>
-<mat-dialog-content >
-  <form>
-    <mat-form-field appearance="outline">
-      <mat-label>이메일</mat-label>
-      <input type="email" matInput placeholder="이메일을 입력해주세요.">
-    </mat-form-field>
+<mat-dialog-content>
+  <form [formGroup]="signUpForm">
+    <div class="email-box" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap=".5vw">
+      <mat-form-field 
+        [fxFlex]="authenticationSuccessful ? 100 : 69.5"
+        appearance="outline"
+      >
+        <mat-label>이메일</mat-label>
+        <input
+          type="email"
+          matInput
+          formControlName="email"
+          placeholder="이메일을 입력해주세요."
+        />
+        <mat-icon color="primary" matSuffix *ngIf="authenticationSuccessful">
+          check_circle
+        </mat-icon>
+      </mat-form-field>
+      <button
+        fxFlex="30"
+        mat-raised-button
+        color="primary"
+        [disabled]="emailAuthentication"
+        *ngIf="!authenticationSuccessful"
+        (click)="sendAuthenticationMail()"
+      >
+        인증메일 발송
+      </button>
+    </div>
+
+    <div
+      *ngIf="emailAuthentication"
+      class="email-auth-box"
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      fxLayoutGap=".5vw"
+    >
+      <mat-form-field fxFlex="79.5" appearance="outline">
+        <mat-label>인증코드</mat-label>
+        <input
+          type="text"
+          matInput
+          [value]="authenticationCode"
+          placeholder="인증코드 입력 후 확인을 클릭하세요."
+        />
+      </mat-form-field>
+      <button
+        fxFlex="20"
+        mat-raised-button
+        color="primary"
+        (click)="authenticationVerification()"
+      >
+        확인
+      </button>
+    </div>
 
     <mat-form-field appearance="outline">
       <mat-label>이름</mat-label>
-      <input type="email" matInput placeholder="이름을 입력해주세요.">
+      <input
+        type="text"
+        matInput
+        formControlName="username"
+        placeholder="이름을 입력해주세요."
+      />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>비밀번호</mat-label>
-      <input matInput placeholder="비밀번호를 입력해주세요.">
+      <input
+        type="password"
+        matInput
+        formControlName="password"
+        placeholder="비밀번호를 입력해주세요."
+      />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>비밀번호 확인</mat-label>
-      <input matInput placeholder="비밀번호를 한번 더 입력해주세요.">
+      <input
+        type="password" 
+        matInput
+        formControlName="confirmPassword"
+        placeholder="비밀번호를 한번 더 입력해주세요."
+      />
     </mat-form-field>
 
     <button
