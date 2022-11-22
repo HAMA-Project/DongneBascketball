@@ -94,6 +94,7 @@
       mat-raised-button
       color="primary"
       type="submit"
+      [disabled]="signUpForm.invalid"
       (click)="signUp()"
     >
         회원가입
