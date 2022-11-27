@@ -1,1 +1,26 @@
-<p>freeboard-detail works!</p>
+<div class="page">
+  <div class="header-box">
+    <h1>
+      {{ freeboardPost?.title }}
+    </h1>
+    <div class="button-box">
+      <button mat-raised-button>수정</button>
+      <button mat-raised-button>삭제</button>
+      <button mat-raised-button>마감완료</button>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <span>생성 날짜 : {{ freeboardPost?.created_date }}</span>
+    <span>수정 날짜 : {{ freeboardPost?.updated_date }}</span>
+    <span>작성자 : {{ freeboardPost?.writer }}</span>
+  </div>
+
+  <div class="content-box">
+    {{ freeboardPost?.content }}
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="1vw">
+    <button mat-raised-button type="reset" routerLink="../">목록으로</button>
+  </div>
+</div>

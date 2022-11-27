@@ -13,7 +13,6 @@ export class SignUpDialog {
     email: ['', [Validators.required, Validators.email]],
     username: ['', Validators.required],
     password: ['', Validators.required],
-    
     confirmPassword: ['', Validators.required]
   });
 
@@ -68,5 +67,30 @@ export class SignUpDialog {
       })
     */
   }
-    
+
+  // ===================================
+  //           Error Message          
+  // ===================================
+
+  getEmailErrorMessage() {
+    const email = this.signUpForm.get('email');
+    if (email?.hasError('duplicate'))  return "* 이미 사용중인 이메일 입니다.";
+    else if (email?.hasError('email')) return "* 이메일 형식에 맞게 입력해주세요.";
+    else                               return "* 이메일 입력은 필수입니다.";
+  }
+
+  getNameErrorMessage() {
+    if (this.signUpForm.get('username')?.hasError('required')) return "* 닉네임 입력은 필수입니다.";
+    else                                                       return "";
+  }
+
+  getPasswordErrorMessage() {
+    if (this.signUpForm.get('password')?.hasError('required')) return "* 비밀번호 입력은 필수입니다.";
+    else                                                       return "";
+  }
+
+  getConfirmPasswordErrorMessage() {
+    if (this.signUpForm.get('confirmPassword')?.hasError('required')) return "* 비밀번호 확인 입력은 필수입니다.";
+    else                                                              return "";
+  }
 }

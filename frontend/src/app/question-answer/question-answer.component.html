@@ -1,1 +1,35 @@
-<p>question-answer works!</p>
+<div class="page">
+  <h1>Q & A</h1>
+
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <mat-checkbox (change)="onFilterWriter($event)">내 게시글 조회</mat-checkbox>
+    <button mat-stroked-button routerLink="./create">글쓰기</button>
+  </div>
+
+  <table mat-table [dataSource]="QAPostDataSource">
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>제목</th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="created_date">
+      <th mat-header-cell *matHeaderCellDef>생성 시간</th>
+      <td mat-cell *matCellDef="let element"> {{element.created_date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="updated_date">
+      <th mat-header-cell *matHeaderCellDef>생성 시간</th>
+      <td mat-cell *matCellDef="let element"> {{element.updated_date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="writer">
+      <th mat-header-cell *matHeaderCellDef>작성자</th>
+      <td mat-cell *matCellDef="let element"> {{element.writer}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="QAPostDisplayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: QAPostDisplayedColumns;" [routerLink]="row.id"></tr>
+  </table>
+
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

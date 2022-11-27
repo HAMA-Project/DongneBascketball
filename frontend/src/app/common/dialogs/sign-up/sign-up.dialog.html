@@ -11,16 +11,19 @@
         [fxFlex]="authenticationSuccessful ? 100 : 69.5"
         appearance="outline"
       >
-        <mat-label>이메일</mat-label>
+        <mat-label for="email">이메일</mat-label>
         <input
           type="email"
           matInput
           formControlName="email"
           placeholder="이메일을 입력해주세요."
         />
-        <mat-icon color="primary" matSuffix *ngIf="authenticationSuccessful">
+        <mat-icon color="success" matSuffix *ngIf="authenticationSuccessful">
           check_circle
         </mat-icon>
+        <mat-error *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
+          {{ getEmailErrorMessage() }}
+        </mat-error>
       </mat-form-field>
       <button
         fxFlex="30"
@@ -33,7 +36,6 @@
         인증메일 발송
       </button>
     </div>
-
     <div
       *ngIf="emailAuthentication"
       class="email-auth-box"
@@ -68,7 +70,13 @@
         formControlName="username"
         placeholder="이름을 입력해주세요."
       />
+      <mat-error
+        *ngIf="signUpForm.get('username')?.invalid && signUpForm.get('username')?.touched"
+      >
+        {{ getNameErrorMessage() }}
+      </mat-error>
     </mat-form-field>
+    
 
     <mat-form-field appearance="outline">
       <mat-label>비밀번호</mat-label>
@@ -78,7 +86,13 @@
         formControlName="password"
         placeholder="비밀번호를 입력해주세요."
       />
+      <mat-error
+        *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched"
+      >
+        {{ getPasswordErrorMessage() }}
+      </mat-error>
     </mat-form-field>
+    
 
     <mat-form-field appearance="outline">
       <mat-label>비밀번호 확인</mat-label>
@@ -88,7 +102,13 @@
         formControlName="confirmPassword"
         placeholder="비밀번호를 한번 더 입력해주세요."
       />
+      <mat-error
+        *ngIf="signUpForm.get('confirmPassword')?.invalid && signUpForm.get('confirmPassword')?.touched"
+      >
+        {{ getConfirmPasswordErrorMessage() }}
+      </mat-error>
     </mat-form-field>
+    
 
     <button
       mat-raised-button
