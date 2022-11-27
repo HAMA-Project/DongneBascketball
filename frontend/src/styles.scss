@@ -14,6 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --sidenav-item-hover-color: rgba(0, 0, 0, 0.1);
   //--sidenav-item-hover-color: rgba(255, 165, 0, 0.4);
   --sidenav-item-active-color: #D2691E;
+  --info-text-color: rgba(0, 0, 0, 0.5);
 }
 
 // basic element
@@ -61,4 +62,15 @@ table {
 // mat-icon custom color
 .mat-icon.mat-success {
   color: green;
+}
+
+// mat-checkbox color
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+  background: var(--sub-color);
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background: var(--main-color);
 }
