@@ -16,6 +16,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatNativeDateModule } from '@angular/material/core';
+
+// material extention modules
 
 const materialModules = [
   MatButtonModule,
@@ -31,6 +34,7 @@ const materialModules = [
   MatDatepickerModule,
   MatCheckboxModule,
   MatPaginatorModule,
+  MatNativeDateModule,
 ];
 
 const modules = [

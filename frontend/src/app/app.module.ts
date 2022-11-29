@@ -33,15 +33,15 @@ import { QuestionAnswerDetailComponent } from './question-answer/question-answer
     FreeboardDetailComponent,
     FreeboardCreateComponent,
     QuestionAnswerCreateComponent,
-    QuestionAnswerDetailComponent
+    QuestionAnswerDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
