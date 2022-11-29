@@ -3,10 +3,9 @@
     <h1>
       {{ freeboardPost?.title }}
     </h1>
-    <div class="button-box">
+    <div class="top-button-box">
       <button mat-raised-button>수정</button>
       <button mat-raised-button>삭제</button>
-      <button mat-raised-button>마감완료</button>
     </div>
   </div>
 
@@ -20,7 +19,7 @@
     {{ freeboardPost?.content }}
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="1vw">
+  <div class="bottom-button-box">
     <button mat-raised-button type="reset" routerLink="../">목록으로</button>
   </div>
 </div>

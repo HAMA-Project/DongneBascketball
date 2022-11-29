@@ -8,6 +8,8 @@ export interface GuestPost {
   end_time: string;
   status: boolean;
   content: string;
+  created_date: string;
+  updated_date: string;
   writer: string;
 }
 

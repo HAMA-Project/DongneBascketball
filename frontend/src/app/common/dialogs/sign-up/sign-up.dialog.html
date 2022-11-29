@@ -6,11 +6,8 @@
 </div>
 <mat-dialog-content>
   <form [formGroup]="signUpForm">
-    <div class="email-box" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap=".5vw">
-      <mat-form-field 
-        [fxFlex]="authenticationSuccessful ? 100 : 69.5"
-        appearance="outline"
-      >
+    <div class="email-box">
+      <mat-form-field appearance="outline">
         <mat-label for="email">이메일</mat-label>
         <input
           type="email"
@@ -26,7 +23,6 @@
         </mat-error>
       </mat-form-field>
       <button
-        fxFlex="30"
         mat-raised-button
         color="primary"
         [disabled]="emailAuthentication"
@@ -39,11 +35,8 @@
     <div
       *ngIf="emailAuthentication"
       class="email-auth-box"
-      fxLayout="row"
-      fxLayoutAlign="start center"
-      fxLayoutGap=".5vw"
     >
-      <mat-form-field fxFlex="79.5" appearance="outline">
+      <mat-form-field appearance="outline">
         <mat-label>인증코드</mat-label>
         <input
           type="text"
@@ -53,7 +46,6 @@
         />
       </mat-form-field>
       <button
-        fxFlex="20"
         mat-raised-button
         color="primary"
         (click)="authenticationVerification()"

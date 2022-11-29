@@ -4,6 +4,15 @@ mat-toolbar {
   background: transparent;
 }
 
+.logo-box {
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+}
+
 .login-box {
   justify-self: flex-end;
 }
