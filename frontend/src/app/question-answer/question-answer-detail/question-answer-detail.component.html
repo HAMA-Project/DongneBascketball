@@ -1,1 +1,25 @@
-<p>question-answer-detail works!</p>
+<div class="page">
+  <div class="header-box">
+    <h1>
+      {{ QAPost?.title }}
+    </h1>
+    <div class="button-box">
+      <button mat-raised-button>수정</button>
+      <button mat-raised-button>삭제</button>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <span>생성 날짜 : {{ QAPost?.created_date }}</span>
+    <span>수정 날짜 : {{ QAPost?.updated_date }}</span>
+    <span>작성자 : {{ QAPost?.writer }}</span>
+  </div>
+
+  <div class="content-box">
+    {{ QAPost?.content }}
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="1vw">
+    <button mat-raised-button type="reset" routerLink="../">목록으로</button>
+  </div>
+</div>
