@@ -16,21 +16,24 @@ const routes: Routes = [
   { path: 'guest-announcement', component: GuestAnnouncementComponent },
   { path: 'freeboard', component: FreeboardComponent },
   { path: 'freeboard/create', component: FreeboardCreateComponent },
-  { 
-    path: 'freeboard/:freeboardPost-id', component: FreeboardDetailComponent,
-    resolve: { freeboardPost: FreeboardResolverService }
+  {
+    path: 'freeboard/:freeboardPost-id',
+    component: FreeboardDetailComponent,
+    resolve: { freeboardPost: FreeboardResolverService },
   },
   { path: 'question-answer', component: QuestionAnswerComponent },
   { path: 'question-answer/create', component: QuestionAnswerCreateComponent },
-  { 
-    path: 'question-answer/:QAPost-id', component: QuestionAnswerDetailComponent,
-    resolve: { QAPost: QuestionAnswerResolverService }
+  {
+    path: 'question-answer/:QAPost-id',
+    component: QuestionAnswerDetailComponent,
+    resolve: { QAPost: QuestionAnswerResolverService },
   },
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

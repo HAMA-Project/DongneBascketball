@@ -14,7 +14,7 @@
       margin: 0;
     }
 
-    .button-box {
+    .top-button-box {
       display: flex;
       flex-direction: row;
       gap: 1vw;
@@ -41,6 +41,14 @@
     border-top: 1px solid var(--line-color);
     border-bottom: 1px solid var(--line-color);
     min-height: 50vh;
+  }
+
+  .bottom-button-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1vw;
   }
 }
 

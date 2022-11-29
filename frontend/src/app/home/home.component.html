@@ -1,6 +1,6 @@
 <div class="page">
-  <div fxLayout="row" fxFlex fxLayoutGap="2vw">
-    <div fxLayout="column" fxFlex="49" fxLayoutGap="2vh">
+  <div class="container">
+    <div class="first-box">
       <h1>게스트 공고</h1>
       <table mat-table [dataSource]="guestPostDataSource">
 
@@ -33,8 +33,8 @@
         <tr mat-row *matRowDef="let row; columns: guestPostDisplayedColumns;"></tr>
       </table>
     </div>
-    <div fxLayout="column" fxFlex="49" fxLayoutGap="2vh">
-      <div fxLayout="column" fxLayoutGap="2vh">
+    <div class="second-box">
+      <div class="freeboard-box">
         <h1>자유게시판</h1>
         <table mat-table [dataSource]="freeBoardPostDataSource">
 
@@ -57,7 +57,7 @@
           <tr mat-row *matRowDef="let row; columns: freeBoardPostDisplayedColumns;"></tr>
         </table>
       </div>
-      <div fxLayout="column" fxLayoutGap="2vh">
+      <div class="question-answer-box">
         <h1>Q & A</h1>
         <table mat-table [dataSource]="questionAnswerPostDataSource">
 

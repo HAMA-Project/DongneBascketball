@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // material modules
@@ -18,7 +17,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
-
 const materialModules = [
   MatButtonModule,
   MatIconModule,
@@ -35,27 +33,17 @@ const materialModules = [
   MatPaginatorModule,
 ];
 
-
 const modules = [
   HttpClientModule,
-  FlexLayoutModule,
   FormsModule,
   ReactiveFormsModule,
-  ...materialModules
+  ...materialModules,
 ];
 
 @NgModule({
-  declarations: [
-
-  ],
-  imports: [
-    ...modules
-  ],
-  exports: [
-    ...modules
-  ],
-  providers: [
-
-  ]
+  declarations: [],
+  imports: [...modules],
+  exports: [...modules],
+  providers: [],
 })
-export class SharedModule { }
+export class SharedModule {}
