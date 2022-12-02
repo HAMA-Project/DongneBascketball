@@ -10,21 +10,33 @@ import { FreeboardResolverService } from './freeboard/freeboard-resolve.service'
 import { QuestionAnswerCreateComponent } from './question-answer/question-answer-create/question-answer-create.component';
 import { QuestionAnswerDetailComponent } from './question-answer/question-answer-detail/question-answer-detail.component';
 import { QuestionAnswerResolverService } from './question-answer/question-answer-resolve.service';
+import { GuestAnnouncementCreateComponent } from './guest-announcement/guest-announcement-create/guest-announcement-create.component';
+import { GuestAnnouncementDetailComponent } from './guest-announcement/guest-announcement-detail/guest-announcement-detail.component';
+import { GuestAnnouncementResolverService } from './guest-announcement/guest-announcement-resolve.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'guest-announcement', component: GuestAnnouncementComponent },
+  {
+    path: 'guest-announcement/create',
+    component: GuestAnnouncementCreateComponent,
+  },
+  {
+    path: 'guest-announcement/:id',
+    component: GuestAnnouncementDetailComponent,
+    resolve: { GuestPost: GuestAnnouncementResolverService },
+  },
   { path: 'freeboard', component: FreeboardComponent },
   { path: 'freeboard/create', component: FreeboardCreateComponent },
   {
-    path: 'freeboard/:freeboardPost-id',
+    path: 'freeboard/:id',
     component: FreeboardDetailComponent,
     resolve: { freeboardPost: FreeboardResolverService },
   },
   { path: 'question-answer', component: QuestionAnswerComponent },
   { path: 'question-answer/create', component: QuestionAnswerCreateComponent },
   {
-    path: 'question-answer/:QAPost-id',
+    path: 'question-answer/:id',
     component: QuestionAnswerDetailComponent,
     resolve: { QAPost: QuestionAnswerResolverService },
   },

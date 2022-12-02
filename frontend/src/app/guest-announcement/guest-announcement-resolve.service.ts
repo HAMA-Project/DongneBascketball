@@ -5,20 +5,20 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { FreeBoardPost } from '../domain/freeboard';
-import { freeBoardPostSampleData } from '../sample-data';
+import { GuestPost } from '../domain/guest';
+import { guestPostSampleData } from '../sample-data';
 
 @Injectable({
   providedIn: 'root',
 })
-export class FreeboardResolverService implements Resolve<FreeBoardPost> {
+export class GuestAnnouncementResolverService implements Resolve<GuestPost> {
   constructor() {}
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<FreeBoardPost> {
+  ): Observable<GuestPost> {
     const postId = route.params['id'];
-    return freeBoardPostSampleData[postId - 1] as any;
+    return guestPostSampleData[postId - 1] as any;
   }
 }
