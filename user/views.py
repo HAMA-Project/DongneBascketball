@@ -8,7 +8,7 @@ from core.schemas import MessageOut
 from user.models import User
 from user.schemas import DuplicateOut, EmailIn, LoginUserIn, SignupUserIn, UsernameIn
 
-api = NinjaAPI()
+api = NinjaAPI(version="users", docs_url="/api/docs/")
 
 
 @api.post(path="/duplicates/email", response=DuplicateOut)
