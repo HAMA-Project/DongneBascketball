@@ -9,7 +9,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class ConfirmDialog implements OnInit {
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public message: string,
+    @Inject(MAT_DIALOG_DATA) public data: string,
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class ConfirmDialog implements OnInit {
 export class DeleteDialog implements OnInit {
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public message: string,
+    @Inject(MAT_DIALOG_DATA) public data: string,
   ) { }
 
   ngOnInit(): void {
