@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 
 :root {
@@ -14,9 +21,36 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --sidenav-item-hover-color: rgba(0, 0, 0, 0.1);
   //--sidenav-item-hover-color: rgba(255, 165, 0, 0.4);
   --sidenav-item-active-color: #D2691E;
+  --info-text-color: rgba(0, 0, 0, 0.5);
 }
 
-.mat-toolbar-row, .mat-toolbar-single-row {
+// basic element
+
+table {
+  border: 1px solid var(--line-color);
+
+  .mat-row {
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--sub-color);
+    }
+
+    &:active {
+      background-color: var(--main-color);
+
+      td {
+        color: white;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// material custom
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
   height: var(--gnb-height);
 }
 
@@ -25,9 +59,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 // mat-button primary color custom
-.mat-flat-button.mat-primary, 
-.mat-raised-button.mat-primary, 
-.mat-fab.mat-primary, 
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
 .mat-mini-fab.mat-primary {
   background-color: var(--main-color);
 }
@@ -39,4 +73,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-form-field.mat-focused .mat-form-field-label {
   color: var(--main-color)
+}
+
+// mat-form-field fill custom
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: var(--main-color);
+}
+
+// mat-icon custom color
+.mat-icon.mat-success {
+  color: green;
+}
+
+// mat-checkbox color
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+  background: var(--sub-color);
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background: var(--main-color);
 }

@@ -1,5 +1,6 @@
 .mat-dialog-content {
   padding-bottom: 1rem;
+
   form {
     width: 100%;
   }
@@ -16,7 +17,7 @@
 
 .mat-dialog-actions {
   flex-direction: column;
-  
+
   .line-box {
     width: 100%;
     display: flex;
@@ -28,7 +29,7 @@
     .mat-divider {
       width: 100%;
     }
-    
+
     span {
       white-space: nowrap;
       color: var(--opacity-2);
@@ -48,12 +49,13 @@
       width: 3rem;
       height: 3rem;
       line-height: 3rem;
+
       .mat-icon {
         width: 3rem;
         height: 3rem;
       }
     }
-    
+
   }
-  
+
 }

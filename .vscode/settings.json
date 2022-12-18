@@ -3,7 +3,7 @@
     "python.linting.enabled": true,
     "python.linting.pylintArgs": ["--load-plugins"],
     "debug.allowBreakpointsEverywhere": true,
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "off",
     "editor.rulers": [
         120
     ],

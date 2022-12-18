@@ -14,6 +14,20 @@ import { FreeboardComponent } from './freeboard/freeboard.component';
 import { QuestionAnswerComponent } from './question-answer/question-answer.component';
 import { SignInDialog } from './common/dialogs/sign-in/sign-in.dialog';
 import { SignUpDialog } from './common/dialogs/sign-up/sign-up.dialog';
+import { FreeboardDetailComponent } from './freeboard/freeboard-detail/freeboard-detail.component';
+import { FreeboardCreateComponent } from './freeboard/freeboard-create/freeboard-create.component';
+import { QuestionAnswerCreateComponent } from './question-answer/question-answer-create/question-answer-create.component';
+import { QuestionAnswerDetailComponent } from './question-answer/question-answer-detail/question-answer-detail.component';
+import { GuestAnnouncementCreateComponent } from './guest-announcement/guest-announcement-create/guest-announcement-create.component';
+import { GuestAnnouncementDetailComponent } from './guest-announcement/guest-announcement-detail/guest-announcement-detail.component';
+import { ConfirmDialog, DeleteDialog } from './common/dialogs/dialog.component';
+
+const dialogs = [
+  SignInDialog,
+  SignUpDialog,
+  ConfirmDialog,
+  DeleteDialog,
+];
 
 @NgModule({
   declarations: [
@@ -24,16 +38,21 @@ import { SignUpDialog } from './common/dialogs/sign-up/sign-up.dialog';
     GuestAnnouncementComponent,
     FreeboardComponent,
     QuestionAnswerComponent,
-    SignInDialog,
-    SignUpDialog
+    FreeboardDetailComponent,
+    FreeboardCreateComponent,
+    QuestionAnswerCreateComponent,
+    QuestionAnswerDetailComponent,
+    GuestAnnouncementCreateComponent,
+    GuestAnnouncementDetailComponent,
+    ...dialogs
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

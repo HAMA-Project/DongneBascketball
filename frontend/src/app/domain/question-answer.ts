@@ -3,5 +3,6 @@ export interface QuestionAnswerPost {
   title: string;
   content: string;
   created_date: string;
+  updated_date: string;
   writer: string;
 }

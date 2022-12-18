@@ -6,18 +6,32 @@
 </div>
 
 <mat-dialog-content>
-  <form>
+  <form [formGroup]="signInForm">
     <mat-form-field appearance="outline">
       <mat-label>이메일</mat-label>
-      <input type="email" matInput placeholder="이메일을 입력해주세요.">
+      <input
+        matInput
+        formControlName="email"
+        placeholder="이메일을 입력해주세요."
+      />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>비밀번호</mat-label>
-      <input matInput placeholder="비밀번호를 입력해주세요.">
+      <input 
+        type="password"
+        matInput
+        formControlName="password"
+        placeholder="비밀번호를 입력해주세요."
+      />
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">
+    <button 
+      type="submit"
+      mat-raised-button 
+      color="primary"
+      (click)="signIn()"
+    >
       로그인
     </button>
   </form>

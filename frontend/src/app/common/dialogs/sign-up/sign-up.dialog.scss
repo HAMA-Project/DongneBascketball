@@ -1,5 +1,5 @@
 .mat-dialog-content {
-  
+
   form {
     width: 100%;
   }
@@ -11,5 +11,35 @@
   button {
     width: 100%;
     height: 3rem;
+  }
+
+  .email-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5vw;
+
+    button {
+      flex: 1 1 100%;
+      box-sizing: border-box;
+      max-width: 30%;
+      margin-bottom: 1.34375em;
+    }
+  }
+
+  .email-auth-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5vw;
+
+    button {
+      flex: 1 1 100%;
+      box-sizing: border-box;
+      max-width: 20%;
+      margin-bottom: 1.34375em;
+    }
   }
 }
