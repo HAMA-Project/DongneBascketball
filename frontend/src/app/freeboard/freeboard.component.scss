@@ -10,21 +10,4 @@
     justify-content: space-between;
     align-items: center;
   }
-
-  table {
-    .mat-row {
-      cursor: pointer;
-      
-      &:hover {
-        background-color: var(--sub-color);
-      }
-      &:active {
-        background-color: var(--main-color);
-        td {
-          color: white;
-          font-weight: 500;
-        }
-      }
-    }
-  }
 }

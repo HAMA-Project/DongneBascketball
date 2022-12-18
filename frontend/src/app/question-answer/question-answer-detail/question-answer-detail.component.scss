@@ -3,12 +3,26 @@
   display: flex;
   flex-direction: column;
   gap: 2vh;
-  
+
   .header-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    input {
+      background: transparent;
+      font-size: 24px;
+      color: black;
+      padding: 10px;
+      border: none;
+      width: 80%;
+
+      &:disabled {
+        color: black;
+        background: transparent;
+      }
+    }
 
     h1 {
       margin: 0;
@@ -58,4 +72,8 @@ textarea {
   &.mat-input-element {
     resize: none;
   }
+}
+
+.invalid {
+  color: red;
 }
