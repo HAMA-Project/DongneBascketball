@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 
 :root {
@@ -21,11 +28,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 table {
   border: 1px solid var(--line-color);
+
+  .mat-row {
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--sub-color);
+    }
+
+    &:active {
+      background-color: var(--main-color);
+
+      td {
+        color: white;
+        font-weight: 500;
+      }
+    }
+  }
 }
 
 // material custom
 
-.mat-toolbar-row, .mat-toolbar-single-row {
+.mat-toolbar-row,
+.mat-toolbar-single-row {
   height: var(--gnb-height);
 }
 
@@ -34,9 +59,9 @@ table {
 }
 
 // mat-button primary color custom
-.mat-flat-button.mat-primary, 
-.mat-raised-button.mat-primary, 
-.mat-fab.mat-primary, 
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
 .mat-mini-fab.mat-primary {
   background-color: var(--main-color);
 }
