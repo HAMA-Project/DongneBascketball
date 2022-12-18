@@ -20,7 +20,7 @@ import { QuestionAnswerCreateComponent } from './question-answer/question-answer
 import { QuestionAnswerDetailComponent } from './question-answer/question-answer-detail/question-answer-detail.component';
 import { GuestAnnouncementCreateComponent } from './guest-announcement/guest-announcement-create/guest-announcement-create.component';
 import { GuestAnnouncementDetailComponent } from './guest-announcement/guest-announcement-detail/guest-announcement-detail.component';
-import { ConfirmDialog, DeleteDialog } from './common/dialogs/dialog/dialog.component';
+import { ConfirmDialog, DeleteDialog } from './common/dialogs/dialog.component';
 
 const dialogs = [
   SignInDialog,
