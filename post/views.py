@@ -26,7 +26,7 @@ def get_freeboards(request):
 
 
 @api.post(path="/freeboards", response={200: MessageOut})
-def create_freeboards(request, payload: FreeBoardIn):
+def create_freeboard(request, payload: FreeBoardIn):
     """
     자유게시판 생성
     """
