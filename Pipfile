@@ -9,6 +9,7 @@ django-ninja = "*"
 factory-boy = "*"
 django-environ = "*"
 zappa = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 black = "*"
