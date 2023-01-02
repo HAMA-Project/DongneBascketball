@@ -8,10 +8,10 @@ class EmailIn(Schema):
     email: str
 
     @validator("email")
-    def message_base_type_validation(cls, v):
-        email_form = re.compile("^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
+    def email_form_validation(cls, v):
+        email_form = re.compile(r"^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
         if email_form.match(v) is None:
-            raise ValueError("email type is not valid")
+            return {"message": "올바른 이메일을 작성해주세요."}
 
 
 class UsernameIn(Schema):
