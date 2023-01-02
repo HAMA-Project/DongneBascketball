@@ -55,12 +55,12 @@ class BackofficeLoginTest(TestCase):
 
     def test_auth_email(self):
         # Given
-        payload = {"email": "a01046641857@gmail.com"}
+        payload = EmailIn(email="test@google.com")
 
         # When
         response = self.client.post(
             path="/users/authenticates/email",
-            data=payload,
+            data=json.loads(payload.json()),
             content_type="application/json",
         )
 

@@ -1,17 +1,14 @@
-import re
-
 from ninja import Schema
-from ninja.schema import validator
 
 
 class EmailIn(Schema):
     email: str
 
-    @validator("email")
-    def email_form_validation(cls, v):
-        email_form = re.compile(r"^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
-        if email_form.match(v) is None:
-            return {"message": "올바른 이메일을 작성해주세요."}
+    # @validator("email")
+    # def email_form_validation(cls, v):
+    #     email_form = re.compile(r"^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
+    #     if email_form.match(v) is None:
+    #         return {"message": "올바른 이메일을 작성해주세요."}
 
 
 class UsernameIn(Schema):
