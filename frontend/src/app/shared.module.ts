@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // material modules
@@ -38,7 +37,6 @@ const materialModules = [
 ];
 
 const modules = [
-  HttpClientModule,
   FormsModule,
   ReactiveFormsModule,
   ...materialModules,
