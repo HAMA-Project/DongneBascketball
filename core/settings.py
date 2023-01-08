@@ -94,7 +94,7 @@ STAGE = typing.cast(typing.Literal["local", "develop"], os.getenv("STAGE"))
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "dongne_basketball",
+        "NAME": "postgres",
         "USER": os.environ["DB_USER"],
         "PASSWORD": os.environ["DB_PASSWORD"],
         "HOST": os.environ["DB_HOST"],
