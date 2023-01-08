@@ -1,6 +1,7 @@
-import { HttpClient, HttpContext } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 import { MessageOut } from "../domain/common";
 import { DuplicateOut, EmailIn, LoginUserIn, SignupUserIn, UsernameIn } from "../domain/user";
 
@@ -9,23 +10,25 @@ import { DuplicateOut, EmailIn, LoginUserIn, SignupUserIn, UsernameIn } from "..
     providedIn: 'root'
 })
 export class ApiService {
-  
-    private readonly BACKEND_URL = "https://iq579oh8v4.execute-api.ap-northeast-2.amazonaws.com";
-  
+
+    private readonly BACKEND_URL;
+
     constructor(
-      private http: HttpClient
-    ) {}
+        private http: HttpClient
+    ) {
+        this.BACKEND_URL = environment.BACKEND_URL;
+    }
 
     //=======================================================================
     // API BASIC STRUCTURE
     //=======================================================================
-  
+
     public get<T>(endpoint: string, id?: number, params?: any): Observable<T> {
-      let url = `${this.BACKEND_URL}${endpoint}`;
-      if (id) {
-        url += `/${id}`;
-      }
-      return this.http.get<T>(url, { 'params': params });
+        let url = `${this.BACKEND_URL}${endpoint}`;
+        if (id) {
+            url += `/${id}`;
+        }
+        return this.http.get<T>(url, { 'params': params });
     }
 
     public post<T>(endpoint: string, body: any): Observable<T> {
@@ -54,7 +57,7 @@ export class ApiService {
     public signIn(form: LoginUserIn): Observable<MessageOut> {
         return this.post<MessageOut>('/dev/users/login', form);
     }
-    
+
     public checkEmail(form: EmailIn): Observable<DuplicateOut> {
         return this.post<DuplicateOut>('/dev/users/duplicates/email', form);
     }
