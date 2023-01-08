@@ -4,7 +4,7 @@
 
 export const environment = {
 	production: false,
-	BACKEND_URL: "https://iq579oh8v4.execute-api.ap-northeast-2.amazonaws.com"
+	BACKEND_URL: " https://3stb21askl.execute-api.ap-northeast-2.amazonaws.com"
 };
 
 /*
