@@ -23,5 +23,11 @@ jobs:
         pip install pipenv
         pipenv install
     - name: Run Tests
+      env:
+        DEBUG: "0"
+        DB_USERNAME: ${{ env.DB_USER }}
+        DB_PASSWORD: ${{ env.DB_PASSWORD }}
+        DB_HOST: ${{ env.DB_HOST }}
+        DB_PORT: ${{ env.DB_PORT }}
       run: |
         pipenv run python manage.py test
