@@ -23,7 +23,7 @@ jobs:
         pip install pipenv
         pipenv install
     - name: Run Migrations # run migrations to create table in side car db container
-      run: python pur_beurre/manage.py migrate
+      run: pipenv run python manage.py migrate
       env:
         DJANGO_ALLOWED_HOSTS: ${{ secrets.DJANGO_ALLOWED_HOSTS }}
     - name: Run Tests
