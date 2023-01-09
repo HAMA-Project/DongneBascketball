@@ -55,12 +55,26 @@ class BackofficeLoginTest(TestCase):
 
     def test_auth_email(self):
         # Given
-        payload = EmailIn(email="a01046641857@gmail.com")
+        payload = EmailIn(email="test@google.com")
 
         # When
         response = self.client.post(
             path="/users/authenticates/email",
             data=json.loads(payload.json()),
+            content_type="application/json",
+        )
+
+        # Then
+        self.assertEqual(response.status_code, 200)
+
+    def test_auth_email_not_validation_type(self):
+        # Given
+        payload = {"email": "testtest"}
+
+        # When
+        response = self.client.post(
+            path="/users/authenticates/email",
+            data=payload,
             content_type="application/json",
         )
 
