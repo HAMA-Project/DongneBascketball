@@ -22,10 +22,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv
         pipenv install
+    - name: Copy .env file
+      run: cp .env.example .env
     - name: Run Migrations # run migrations to create table in side car db container
       run: pipenv run python manage.py migrate
-      env:
-        DJANGO_ALLOWED_HOSTS: ${{ secrets.DJANGO_ALLOWED_HOSTS }}
     - name: Run Tests
       run: |
         pipenv run python manage.py test
