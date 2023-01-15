@@ -23,7 +23,7 @@ jobs:
         pip install pipenv
         pipenv install
     - name: Set env vars
-      run: echo "::set-env name=MY_SECRET_ENV_VAR::${{ secrets.MY_SECRET_ENV_VAR }}"
+      run: echo "::set-env name=DB_USER::${{ secrets.DB_USER }}"
     - name: Run Migrations # run migrations to create table in side car db container
       run: pipenv run python manage.py migrate
     - name: Run Tests
