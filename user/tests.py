@@ -80,3 +80,14 @@ class BackofficeLoginTest(TestCase):
 
         # Then
         self.assertEqual(response.status_code, 200)
+
+    # def test_login(self):
+    #     UserFactory(email="test@test.com", password="test")
+    #     payload = LoginUserIn(email="test@test.com", password="test")
+    #
+    #     response = self.client.post(
+    #         path="/users/login",
+    #         data=payload,
+    #         content_type="application/json",
+    #     )
+    #     self.assertEqual(response.status_code, 200)

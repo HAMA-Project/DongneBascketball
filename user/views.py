@@ -1,15 +1,14 @@
 from random import randrange
 
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.core.mail import EmailMessage
 from ninja import NinjaAPI
-from ninja.security.session import SessionAuth
 
 from core.schemas import MessageOut
 from user.models import User
 from user.schemas import DuplicateOut, EmailIn, LoginUserIn, SignupUserIn, UsernameIn
 
-api = NinjaAPI(version="users", docs_url="/api/docs/", csrf=True)
+api = NinjaAPI(version="users", docs_url="/api/docs/")
 
 
 @api.post(path="/duplicates/email", response=DuplicateOut)
@@ -54,10 +53,4 @@ def login_user(request, payload: LoginUserIn):
         return 400, {"message": "user does not exist"}
 
     login(request, user)
-    return 200, {"message": "success"}
-
-
-@api.post(path="/logout", auth=SessionAuth(), response=MessageOut)
-def logout_user(request):
-    logout(request)
-    return 200, {"message": "success"}
+    return 200, {"message": request.session.session_key}
