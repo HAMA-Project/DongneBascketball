@@ -1,7 +1,7 @@
 name: Django CI
 on:
   push:
-    branches: [ "main", "users/feature/yongwoon/backend"]
+    branches: [ "main", "users/yongwoon/feature/backend"]
   pull_request_target:
     branches: [ "main" ]
 jobs:
@@ -22,6 +22,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv
         pipenv install
+    - name: Env Setting
     - name: Run Migrations # run migrations to create table in side car db container
       env:
         DB_USER: ${{ secrets.DB_USER }}
