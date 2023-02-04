@@ -1,7 +1,7 @@
 name: Django CI
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main"]
   pull_request_target:
     branches: [ "main" ]
 jobs:
@@ -22,14 +22,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv
         pipenv install
+    - name: Env Setting
+      env:
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PORT: ${{ secrets.DB_PORT }}
     - name: Run Migrations # run migrations to create table in side car db container
       run: pipenv run python manage.py migrate
-      env:
-        DEBUG: "0"
-        DB_USERNAME: ${{ env.DB_USER }}
-        DB_PASSWORD: ${{ env.DB_PASSWORD }}
-        DB_HOST: ${{ env.DB_HOST }}
-        DB_PORT: ${{ env.DB_PORT }}
     - name: Run Tests
       run: |
         pipenv run python manage.py test
