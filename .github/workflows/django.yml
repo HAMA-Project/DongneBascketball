@@ -1,7 +1,7 @@
 name: Django CI
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "users/feature/yongwoon/backend"]
   pull_request_target:
     branches: [ "main" ]
 jobs:
