@@ -1,6 +1,5 @@
 from typing import List
 
-from django.views.decorators.csrf import csrf_exempt
 from ninja import NinjaAPI
 from ninja.pagination import LimitOffsetPagination, paginate
 from ninja.security.session import SessionAuth
@@ -28,7 +27,6 @@ def get_freeboards(request):
 
 
 @api.post(path="/freeboards", response={200: MessageOut}, auth=SessionAuth())
-@csrf_exempt
 def create_freeboard(request, payload: FreeBoardIn):
     """
     자유게시판 생성
