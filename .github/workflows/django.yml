@@ -24,10 +24,10 @@ jobs:
         pipenv install
     - name: Set Environment Variables
       env:
-        DB_USER: user
-        DB_PASSWORD: password
-        DB_HOST: host
-        DB_PORT: port
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PORT: ${{ secrets.DB_PORT }}
     - name: Run Migrations # run migrations to create table in side car db container
       run: pipenv run python manage.py migrate
     - name: Run Tests
