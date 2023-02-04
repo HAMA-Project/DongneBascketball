@@ -53,4 +53,4 @@ def login_user(request, payload: LoginUserIn):
         return 400, {"message": "user does not exist"}
 
     login(request, user)
-    return 200, {"message": "success"}
+    return 200, {"message": request.session.session_key}

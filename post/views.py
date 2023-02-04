@@ -1,16 +1,18 @@
 from typing import List
 
+from django.views.decorators.csrf import csrf_exempt
 from ninja import NinjaAPI
 from ninja.pagination import LimitOffsetPagination, paginate
+from ninja.security.session import SessionAuth
 
 from core.schemas import MessageOut
 from post.models import FreeBoard
 from post.schemas import FreeBoardIn, FreeBoardOut
 
-api = NinjaAPI(version="index", docs_url="/api/docs/")
+api = NinjaAPI(version="index", docs_url="/api/docs/", csrf=True)
 
 
-@api.get(path="/")
+@api.get(path="/", auth=SessionAuth())
 def home(request):
     return "ok"
 
@@ -25,7 +27,8 @@ def get_freeboards(request):
     return FreeBoard.objects.all().order_by("-created")
 
 
-@api.post(path="/freeboards", response={200: MessageOut})
+@api.post(path="/freeboards", response={200: MessageOut}, auth=SessionAuth())
+@csrf_exempt
 def create_freeboard(request, payload: FreeBoardIn):
     """
     자유게시판 생성

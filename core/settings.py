@@ -14,6 +14,10 @@ import typing
 from pathlib import Path
 
 import environ
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,7 +41,15 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
-
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:8000/",
+    "http://127.0.0.1:4200/",
+    os.environ["DEV_URL"],
+]
+CORS_ALLOW_HEADERS = ["Content-Type", "withCredentials"]
+CSRF_COOKIE_SAMESITE = None
+SESSION_COOKIE_SAMESITE = None
+SESSION_COOKIE_DOMAIN = "http://127.0.0.1:4200/"
 # Application definition
 
 INSTALLED_APPS = [
@@ -65,7 +77,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
 ROOT_URLCONF = "core.urls"
 
 TEMPLATES = [
