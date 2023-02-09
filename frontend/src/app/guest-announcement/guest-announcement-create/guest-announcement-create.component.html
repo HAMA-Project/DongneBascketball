@@ -1,1 +1,42 @@
-<p>guest-announcement-create works!</p>
+<form [formGroup]="guestForm">
+    <div class="page">
+        <mat-form-field appearance="fill">
+            <mat-label>제목</mat-label>
+            <input matInput formControlName="title" placeholder="희망하는 경기인원을 함께 입력해주세요. ex) 3:3 게스트 모집합니다" />
+        </mat-form-field>
+
+        <div class="fx-row a-center gap-10">
+            <mat-form-field appearance="outline" class="w-25p">
+                <mat-label>지역선택</mat-label>
+                <mat-select multiple (selectionChange)="onFilterRegions($event)">
+                    <mat-option *ngFor="let region of regionList" [value]="region">{{region}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-25p">
+                <mat-label>경기 날짜</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="matchDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-25p">
+                <mat-label>시작 시간</mat-label>
+                <input matInput type="time" formControlName="startTime" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-25p">
+                <mat-label>종료 시간</mat-label>
+                <input matInput type="time" formControlName="endTime" />
+            </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="fill">
+            <mat-label>본문</mat-label>
+            <textarea matInput formControlName="content" placeholder="게시글의 내용을 입력하세요."></textarea>
+        </mat-form-field>
+
+        <div class="bottom-button-box">
+            <button mat-raised-button type="reset" routerLink="../">취소</button>
+            <button mat-raised-button type="submit" (click)="createGuestPost()">등록</button>
+        </div>
+    </div>
+</form>

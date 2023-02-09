@@ -25,7 +25,7 @@
       <button
         mat-raised-button
         color="primary"
-        [disabled]="signUpForm.get('email')?.invalid"
+        [disabled]="signUpForm.get('email')?.invalid || emailAuthentication"
         *ngIf="!authenticationSuccessful"
         (click)="sendAuthenticationMail()"
       >
@@ -41,7 +41,7 @@
         <input
           type="text"
           matInput
-          [value]="authenticationCode"
+          formControlName="authenticationCode"
           placeholder="인증코드 입력 후 확인을 클릭하세요."
         />
       </mat-form-field>
