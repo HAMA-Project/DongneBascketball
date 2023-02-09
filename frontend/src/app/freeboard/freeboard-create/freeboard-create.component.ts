@@ -2,27 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-freeboard-create',
-  templateUrl: './freeboard-create.component.html',
-  styleUrls: ['./freeboard-create.component.scss']
+	selector: 'app-freeboard-create',
+	templateUrl: './freeboard-create.component.html',
+	styleUrls: ['./freeboard-create.component.scss']
 })
 export class FreeboardCreateComponent implements OnInit {
 
-  freeboardForm: FormGroup = this.fb.group({
-    title: ['', Validators.required],
-    content: ['']
-  });
+	freeboardForm: FormGroup = this.fb.group({
+		title: ['', Validators.required],
+		content: ['']
+	});
 
-  constructor(
-    private fb: FormBuilder
-  ) { }
+	constructor(
+		private fb: FormBuilder
+	) { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
-  createFreeboardPost() {
-    const result = this.freeboardForm.getRawValue();
-    console.log(result);
-  }
+	createFreeboardPost() {
+		const result = this.freeboardForm.getRawValue();
+		console.log(result);
+	}
 
 }
